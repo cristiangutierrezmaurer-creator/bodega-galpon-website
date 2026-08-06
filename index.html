@@ -81,6 +81,36 @@
                                                                                                                             </style>
                                                                                                                             </head>
                                                                                                                             <body>
+<style>
+#promo-banner{display:none;position:sticky;top:0;left:0;width:100%;z-index:9999;background:#16a34a;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);}
+#promo-banner .promo-inner{max-width:1100px;margin:0 auto;padding:10px 44px 10px 16px;display:flex;align-items:center;justify-content:center;gap:16px;min-height:52px;position:relative;}
+#promo-banner .promo-text{font-weight:700;font-size:.95rem;text-align:center;}
+#promo-banner .promo-cta{background:#fff;color:#16a34a;font-weight:700;padding:8px 18px;border-radius:999px;font-size:.9rem;white-space:nowrap;flex-shrink:0;}
+#promo-banner .promo-close{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;padding:4px 10px;}
+@media (max-width:600px){
+#promo-banner .promo-inner{flex-direction:column;padding:8px 40px 8px 12px;gap:6px;min-height:48px;}
+#promo-banner .promo-text{font-size:.8rem;}
+#promo-banner .promo-cta{font-size:.8rem;padding:6px 16px;}
+}
+</style>
+<div id="promo-banner">
+<div class="promo-inner">
+<span class="promo-text">Solo este mes: 2 meses de gastos comunes gratis 🏭</span>
+<a href="#contacto" class="promo-cta" id="promo-banner-cta">Ver bodegas disponibles</a>
+<button type="button" class="promo-close" id="promo-banner-close" aria-label="Cerrar">&times;</button>
+</div>
+</div>
+<script>
+(function(){
+var banner=document.getElementById('promo-banner');
+if(!banner)return;
+if(!localStorage.getItem('promoBannerDismissed')){banner.style.display='block';}
+var closeBtn=document.getElementById('promo-banner-close');
+if(closeBtn){closeBtn.addEventListener('click',function(){banner.style.display='none';localStorage.setItem('promoBannerDismissed','1');});}
+var cta=document.getElementById('promo-banner-cta');
+if(cta){cta.addEventListener('click',function(e){e.preventDefault();var target=document.getElementById('contacto');if(target){target.scrollIntoView({behavior:'smooth'});}});}
+})();
+</script>
                                                                                                                             
                                                                                                                             <header class="hero">
                                                                                                                               <div class="content">
