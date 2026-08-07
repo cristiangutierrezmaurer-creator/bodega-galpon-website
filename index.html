@@ -96,7 +96,7 @@
 <div id="promo-banner">
 <div class="promo-inner">
 <span class="promo-text">Solo este mes: 2 meses de gastos comunes gratis 🏭</span>
-<a href="#contacto" class="promo-cta" id="promo-banner-cta">Ver bodegas disponibles</a>
+<a href="#proyectos" class="promo-cta" id="promo-banner-cta">Ver bodegas disponibles</a>
 <button type="button" class="promo-close" id="promo-banner-close" aria-label="Cerrar">&times;</button>
 </div>
 </div>
@@ -108,7 +108,7 @@ if(!localStorage.getItem('promoBannerDismissed')){banner.style.display='block';}
 var closeBtn=document.getElementById('promo-banner-close');
 if(closeBtn){closeBtn.addEventListener('click',function(){banner.style.display='none';localStorage.setItem('promoBannerDismissed','1');});}
 var cta=document.getElementById('promo-banner-cta');
-if(cta){cta.addEventListener('click',function(e){e.preventDefault();var target=document.getElementById('contacto');if(target){target.scrollIntoView({behavior:'smooth'});}});}
+if(cta){cta.addEventListener('click',function(e){e.preventDefault();var target=document.getElementById('proyectos');if(target){target.scrollIntoView({behavior:'smooth'});}});}
 })();
 </script>
                                                                                                                             
