@@ -103,7 +103,7 @@
 <script>
 (function(){
 var banner=document.getElementById('promo-banner');
-if(!banner)return;var heroEl=document.querySelector('header.hero');if(heroEl&&heroEl.nextElementSibling!==banner){heroEl.insertAdjacentElement('afterend',banner);}
+if(!banner)return;document.addEventListener('DOMContentLoaded',function(){var heroEl=document.querySelector('header.hero');if(heroEl&&heroEl.nextElementSibling!==banner){heroEl.insertAdjacentElement('afterend',banner);}});
 if(!localStorage.getItem('promoBannerDismissed')){banner.style.display='block';}
 var closeBtn=document.getElementById('promo-banner-close');
 if(closeBtn){closeBtn.addEventListener('click',function(){banner.style.display='none';localStorage.setItem('promoBannerDismissed','1');});}
