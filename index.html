@@ -82,9 +82,9 @@
                                                                                                                             </head>
                                                                                                                             <body>
 <style>
-#promo-banner{display:none;position:sticky;top:0;left:0;width:100%;z-index:9999;background:#16a34a;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);}
-#promo-banner .promo-inner{max-width:1100px;margin:0 auto;padding:10px 44px 10px 16px;display:flex;align-items:center;justify-content:center;gap:16px;min-height:52px;position:relative;}
-#promo-banner .promo-text{font-weight:700;font-size:.95rem;text-align:center;}
+#promo-banner{display:none;position:sticky;top:0;left:0;width:100%;z-index:9999;background:#16a34a;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);animation:promoFlash 1.3s ease-in-out infinite;}@keyframes promoFlash{0%,100%{background:#16a34a;}50%{background:#22c55e;}}
+#promo-banner .promo-inner{max-width:1400px;margin:0 auto;padding:16px 50px 16px 20px;display:flex;align-items:center;justify-content:center;gap:16px;min-height:64px;position:relative;}
+#promo-banner .promo-text{font-weight:700;font-size:1.1rem;text-align:center;}
 #promo-banner .promo-cta{background:#fff;color:#16a34a;font-weight:700;padding:8px 18px;border-radius:999px;font-size:.9rem;white-space:nowrap;flex-shrink:0;}
 #promo-banner .promo-close{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;padding:4px 10px;}
 @media (max-width:600px){
@@ -103,7 +103,7 @@
 <script>
 (function(){
 var banner=document.getElementById('promo-banner');
-if(!banner)return;
+if(!banner)return;var heroEl=document.querySelector('header.hero');if(heroEl&&heroEl.nextElementSibling!==banner){heroEl.insertAdjacentElement('afterend',banner);}
 if(!localStorage.getItem('promoBannerDismissed')){banner.style.display='block';}
 var closeBtn=document.getElementById('promo-banner-close');
 if(closeBtn){closeBtn.addEventListener('click',function(){banner.style.display='none';localStorage.setItem('promoBannerDismissed','1');});}
